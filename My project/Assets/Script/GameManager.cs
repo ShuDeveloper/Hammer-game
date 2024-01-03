@@ -15,12 +15,13 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    public void StopGame()
-    {
-        Time.timeScale = 0;
-    }
+   
     public void PlayGame()
     {
         Time.timeScale = 1;
+    }
+    public void PuseGame()
+    {
+        Time.timeScale = 0;
     }
 }
