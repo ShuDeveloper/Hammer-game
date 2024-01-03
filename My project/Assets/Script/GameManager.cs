@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    [SerializeField] void StopGame()
+    public void StopGame()
     {
         Time.timeScale = 0;
     }
