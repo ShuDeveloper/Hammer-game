@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,5 +22,13 @@ public class GameManager : MonoBehaviour
     public void PuseGame()
     {
         Time.timeScale = 0;
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
