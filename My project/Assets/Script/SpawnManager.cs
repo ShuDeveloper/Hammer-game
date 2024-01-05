@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    GameObject[] ball;
+    public GameObject[] ball;
+    public Vector3 spawnPosition;
+    public float spawnTime;
     // Start is called before the first frame update
     void Start()
     {
-        
+       StartCoroutine(Spawn());
     }
 
     // Update is called once per frame
@@ -18,7 +20,11 @@ public class SpawnManager : MonoBehaviour
     }
     IEnumerator Spawn()
     {
-        yield return new  WaitForSeconds(3);
-        Instantiate(ball[0]);
+        while (true)
+        {
+            yield return new WaitForSeconds(spawnTime);
+            Instantiate(ball[0],spawnPosition,Quaternion.identity);
+        }
+        
     }
 }
