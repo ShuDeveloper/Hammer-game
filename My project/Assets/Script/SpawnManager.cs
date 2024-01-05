@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject[] ball;
+    public GameObject[] PrefabsObject;
     public Vector3 spawnPosition;
-    public float spawnTime;
+    public float MinSpawnTime;
+    public float MaxSpawnTime;
+    public float Speed;
     // Start is called before the first frame update
     void Start()
     {
-       StartCoroutine(Spawn());
+        StartCoroutine(Spawn(PrefabsObject,spawnPosition));
     }
-
-    // Update is called once per frame
-    void Update()
-    {
         
-    }
-    IEnumerator Spawn()
-    {
-        while (true)
+    IEnumerator Spawn(GameObject[] inObject,Vector3 inPositions)
+    { 
+        while (true) 
         {
-            yield return new WaitForSeconds(spawnTime);
-            Instantiate(ball[0],spawnPosition,Quaternion.identity);
+            float MinTime = MinSpawnTime;
+            float MaxTime = MaxSpawnTime;
+            int RandomIndex = Random.Range(0, inObject.Length);
+            float RandomTime =Random.Range(MinTime, MaxTime);
+            Debug.Log("time =" + RandomTime);
+            yield return new WaitForSeconds(RandomTime); 
+            Instantiate(inObject[RandomIndex], inPositions, Quaternion.identity);
         }
         
     }
