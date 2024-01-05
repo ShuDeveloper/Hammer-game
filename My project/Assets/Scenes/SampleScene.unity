@@ -2873,7 +2873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &771408228
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6314,6 +6314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1964602098}
+  - component: {fileID: 1964602099}
   m_Layer: 0
   m_Name: Spawn Manager
   m_TagString: Untagged
@@ -6336,6 +6337,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1964602099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964602097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed8f2a2e71cd014fa8119e51e8d7df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PrefabsObject:
+  - {fileID: 6519167445542994319, guid: 25cc660d70d6f7d4790a8e5d61170fb7, type: 3}
+  - {fileID: 6519167445542994319, guid: b90c689a37e9d594c98f0d22d0eeb752, type: 3}
+  - {fileID: 6519167445542994319, guid: f6a81645e5c582f4389abad9d1cd95dc, type: 3}
+  - {fileID: 6519167445542994319, guid: 29bdf9ac961184249b4cb689e461dffd, type: 3}
+  - {fileID: 6519167445542994319, guid: d939d460a03dc8f4d874c3cbe96b911c, type: 3}
+  - {fileID: 6519167445542994319, guid: 8e1c249f0431cdf418bbe8042cd6a72d, type: 3}
+  - {fileID: 6519167445542994319, guid: c8b3314159eb17f498d9e3b140a21872, type: 3}
+  - {fileID: 6519167445542994319, guid: 75df335340a65ef4ca22fd068767de98, type: 3}
+  spawnPosition: {x: 0, y: 0, z: 0}
+  MinSpawnTime: 1
+  MaxSpawnTime: 5
+  Speed: 1
 --- !u!1 &2000111745
 GameObject:
   m_ObjectHideFlags: 0

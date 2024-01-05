@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class leftMove : MonoBehaviour
 {
-    [SerializeField] float leftMoveSpeed; //update this speed
+    public float leftMoveSpeed;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +16,14 @@ public class leftMove : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.left * leftMoveSpeed*Time.deltaTime);
+        print("time speed "+ leftMoveSpeed);
         if (transform.position.x < -13)
         {
             Destroy(gameObject);
         }
+    }
+    public void SpeedUpate(float speed)
+    {
+        leftMoveSpeed = speed;
     }
 }
