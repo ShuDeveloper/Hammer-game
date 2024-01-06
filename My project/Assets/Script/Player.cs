@@ -14,6 +14,18 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        PlayerMovement();
+        if (transform.position.x < -12)
+        {
+            Destroy(gameObject);
+            print("Game Over");
+            Time.timeScale =0;
+        }
+    }
+
+    void PlayerMovement()
+    {
         if (Input.GetMouseButtonDown(0))
         {
             transform.rotation = Quaternion.Euler(0, 0, -67);
@@ -24,14 +36,13 @@ public class Player : MonoBehaviour
         }
         else if (Input.GetMouseButtonDown(1))
         {
-            PlayerPostion = new Vector3(transform.position.x,3.4f,transform.position.z);
+            PlayerPostion = new Vector3(-8.27f, 3.4f, transform.position.z);
             transform.position = PlayerPostion;
         }
         else if (Input.GetMouseButtonUp(1))
         {
-            PlayerPostion = new Vector3(transform.position.x, -4, transform.position.z);
+            PlayerPostion = new Vector3(-8.27f, -4, transform.position.z);
             transform.position = PlayerPostion;
-        }
-        
+        } 
     }
 }
