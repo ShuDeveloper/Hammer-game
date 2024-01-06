@@ -6,9 +6,11 @@ public class leftMove : MonoBehaviour
 {
     public float leftMoveSpeed;
      ParticleSystem explosionFX;
-
-    private void Awake()
+     AudioSource audioSoure;
+    public AudioClip clip;
+        private void Awake()
     {
+        audioSoure = GetComponent<AudioSource>();
         explosionFX= GetComponentInChildren<ParticleSystem>();
         explosionFX.Stop();
      
@@ -40,7 +42,7 @@ public class leftMove : MonoBehaviour
         {
             explosionFX.Play();          
             Destroy(gameObject,0.15f);
-
+            audioSoure.PlayOneShot(clip, 1f);
         }
     }
 }
