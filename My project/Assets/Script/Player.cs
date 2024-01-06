@@ -16,20 +16,20 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            transform.rotation = Quaternion.Euler(0, 0, -67.529f);
+            transform.rotation = Quaternion.Euler(0, 0, -67);
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            transform.rotation = Quaternion.Euler(transform.position.x, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else if (Input.GetMouseButtonDown(1))
         {
-            PlayerPostion = new Vector3(transform.position.x,3.4f,0);
+            PlayerPostion = new Vector3(transform.position.x,3.4f,transform.position.z);
             transform.position = PlayerPostion;
         }
         else if (Input.GetMouseButtonUp(1))
         {
-            PlayerPostion = new Vector3(transform.position.x, -4, 0);
+            PlayerPostion = new Vector3(transform.position.x, -4, transform.position.z);
             transform.position = PlayerPostion;
         }
         

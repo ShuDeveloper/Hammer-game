@@ -26,4 +26,13 @@ public class leftMove : MonoBehaviour
     {
         leftMoveSpeed = speed;
     }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Top Collider")
+        {
+            Destroy(gameObject);
+          
+        }
+    }
 }
