@@ -5,11 +5,18 @@ using UnityEngine;
 public class leftMove : MonoBehaviour
 {
     public float leftMoveSpeed;
-   
+     ParticleSystem explosionFX;
+
+    private void Awake()
+    {
+        explosionFX= GetComponentInChildren<ParticleSystem>();
+        explosionFX.Stop();
+     
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -31,8 +38,9 @@ public class leftMove : MonoBehaviour
     {
         if (other.gameObject.name == "Top Collider")
         {
-            Destroy(gameObject);
-          
+            explosionFX.Play();          
+            Destroy(gameObject,0.15f);
+
         }
     }
 }

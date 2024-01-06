@@ -33,9 +33,9 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6046619053855803792}
+  - {fileID: 1698976412945335586}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9044388211974057649
 MeshFilter:
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftMoveSpeed: 5
+  explosionFX: {fileID: 3871520101964433444}
 --- !u!54 &-7227243110715122358
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -148,7 +149,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1001 &7792869959033132983
+--- !u!1001 &2909263810295192325
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -221,9 +222,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f498c3fecd468e4cabc8dbbdf461a98, type: 3}
---- !u!4 &6046619053855803792 stripped
+--- !u!4 &1698976412945335586 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4597104356520926759, guid: 9f498c3fecd468e4cabc8dbbdf461a98,
     type: 3}
-  m_PrefabInstance: {fileID: 7792869959033132983}
+  m_PrefabInstance: {fileID: 2909263810295192325}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &3871520101964433444 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2154320414536667937, guid: 9f498c3fecd468e4cabc8dbbdf461a98,
+    type: 3}
+  m_PrefabInstance: {fileID: 2909263810295192325}
   m_PrefabAsset: {fileID: 0}
