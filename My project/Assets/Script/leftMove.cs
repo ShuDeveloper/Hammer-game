@@ -42,7 +42,7 @@ public class leftMove : MonoBehaviour
         {
             explosionFX.Play();          
             Destroy(gameObject,0.15f);
-            audioSoure.PlayOneShot(clip, 1f);
+            audioSoure.PlayOneShot(clip, 1f); 
         }
     }
 }
