@@ -35,14 +35,37 @@ public class leftMove : MonoBehaviour
     {
         leftMoveSpeed = speed;
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Top Collider")
+        if (other.gameObject.name == "Top Collider" && gameObject.tag == "Ball")
         {
-            explosionFX.Play();          
-            Destroy(gameObject,0.15f);
-            audioSoure.PlayOneShot(clip, 1f); 
+            explosionFX.Play();
+            Destroy(gameObject, 0.15f);
+            audioSoure.PlayOneShot(clip, 1f);
+        }
+        if (other.gameObject.name == "Top Collider" && gameObject.tag == "Box")
+        {
+            Time.timeScale = 0f;
+            print("Game Over");
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.contacts[0].otherCollider.transform.gameObject.name == "Bottom Collider" && gameObject.tag == "Box")
+        {
+            Time.timeScale = 0f;
+            print("Game Over");
+        }
+
+        //if (collision.contacts[0].otherCollider.transform.gameObject.name == "Top Collider" && gameObject.tag == "Box")
+        //{
+        //    Time.timeScale = 0f;
+        //    print("Game Over");
+        //}
+
+    }
+
 }
+
