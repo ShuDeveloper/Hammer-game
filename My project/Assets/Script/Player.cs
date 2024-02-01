@@ -9,10 +9,12 @@ public class Player : MonoBehaviour
 
     //Hammer posintion
     Vector3 PlayerPostion;
-
+    GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+
         //   finger is being tracked or not
         leftFingerId = -1;
         rightFingerId = -1;
@@ -32,14 +34,21 @@ public class Player : MonoBehaviour
         // GameOver and Hammer Destroy  
         if (transform.position.x < -12)
         {
+            gameManager.gameOver();
             Destroy(gameObject);
-            print("Game Over");
+            //print("Game Over");
             Time.timeScale = 0;
         }
 
     }
 
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Box")
+        {           
+            gameManager.gameOver();
+        }
+    }
     void keyboardInput()
     {
         if (Input.GetKeyDown(KeyCode.A))
