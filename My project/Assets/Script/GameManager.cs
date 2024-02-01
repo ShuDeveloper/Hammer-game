@@ -1,11 +1,10 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    //Reference Variable 
     [SerializeField] GameObject pousePanel;
     [SerializeField] GameObject GameOverPanel;
     [SerializeField] GameObject StartPanel;
@@ -16,10 +15,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI ScoreText1;
     [SerializeField] TextMeshProUGUI BallText1;
 
+    //Value type Variable
     public int ball_count = 0;
     public float Score = 0;
    
-
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +29,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ScoreValiue();
+        //increasing score value
+        ScoreValue();
     }
 
     public void PlayGame()
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
   
     public void gameOver()
     {
-        //hammer of player commonet script disable
+        // player component script disable
         playerScript.enabled = false;
 
         BallText1.text = BallText.text;
@@ -63,20 +63,17 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
 
     }
-
-    void ScoreValiue()
+    //Score value increasing
+    void ScoreValue()
     {
-        //int inScore;
-        Score += Time.deltaTime* 5;
-
-        //print("score = " + (int)Score);
+        Score += Time.deltaTime* 5;        
         ScoreText.text = "Score:"+(int)Score;
     }
+    //to store number of ball 
     public void BallCount(int ball)
     {
         ball_count += ball;
-        BallText.text = "Ball:"+ball_count.ToString();
-        //print("ball = " + ball_count);
+        BallText.text = "Ball:"+ball_count.ToString();        
     }
 
 

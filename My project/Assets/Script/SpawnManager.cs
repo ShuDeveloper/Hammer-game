@@ -5,16 +5,15 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] PrefabsObject;
-
     public Vector3 spawnPosition;
 
     public float MinSpawnTime;
     public float MaxSpawnTime;
     public float Speed;
+
     // Start is called before the first frame update
     void Start()
     {
-
         StartCoroutine(Spawn(PrefabsObject, spawnPosition));
         InvokeRepeating("TimeUpdate", 10, 1);
     }
@@ -26,7 +25,6 @@ public class SpawnManager : MonoBehaviour
             float MinTime = MinSpawnTime;
             float MaxTime = MaxSpawnTime;
 
-            
             //Random Variable
             float RandomTime = Random.Range(MinTime, MaxTime);
             int RandomIndex = Random.Range(0, inObject.Length);
@@ -38,11 +36,10 @@ public class SpawnManager : MonoBehaviour
             leftMove Lmove = NewObject.GetComponent<leftMove>();
             Lmove.SpeedUpate(Speed);
 
-            //MaxSpawnTime = MaxTime - Time.deltaTime * 0.01f;
-            //Speed += Time.deltaTime * 1 ;
         }
 
     }
+
     void TimeUpdate()
     {
         if (MaxSpawnTime > 0.5f)

@@ -5,18 +5,18 @@ using UnityEngine;
 public class leftMove : MonoBehaviour
 {
     public float leftMoveSpeed;
+    public AudioClip clip;
     ParticleSystem explosionFX;
     AudioSource audioSoure;
-    public AudioClip clip;
     GameManager gameManager;
     int ball=1;
+
     private void Awake()
     {
         audioSoure = GetComponent<AudioSource>();
         explosionFX = GetComponentInChildren<ParticleSystem>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         explosionFX.Stop();
-
     }   
 
     // Update is called once per frame

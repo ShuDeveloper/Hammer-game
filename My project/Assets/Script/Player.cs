@@ -10,33 +10,34 @@ public class Player : MonoBehaviour
     //Hammer posintion
     Vector3 PlayerPostion;
     GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        PlayerPostion = transform.position;
 
         //   finger is being tracked or not
         leftFingerId = -1;
         rightFingerId = -1;
+
         // calculate half width 
         halfScreenWidth = Screen.width / 2;
-
-        PlayerPostion = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        
-        keyboardInput();  
+        //taking input form Keyboard
+        keyboardInput();
+        //taking input form Touch(phone)
         GetTouchInput();
-        // GameOver and Hammer Destroy  
+
+        // GameOver 
         if (transform.position.x < -12)
         {
             gameManager.gameOver();
-            Destroy(gameObject);
-            //print("Game Over");
+            Destroy(gameObject);            
             Time.timeScale = 0;
         }
 
@@ -45,7 +46,8 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Box")
-        {           
+        {     
+            //when the player collision to box so game over
             gameManager.gameOver();
         }
     }
